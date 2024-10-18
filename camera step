@@ -1,0 +1,43 @@
+loop
+|
+|
+|
+server wait for 
+request time out
+|
+|
+|
+end
+
+####
+
+onIOT-btn
+trigger:IOT_Btn1
+|
+|
+cam1
+capture
+quality=25
+|
+|
+cam1
+getLastImage
+image=>Image
+|
+|
+cam1 
+getImage count
+count=>count
+|
+|
+Iot Photo1
+showImage
+image
+|
+|
+IOT Display1
+set Value
+value=count
+|
+|
+end
