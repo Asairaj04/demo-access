@@ -1,3 +1,8 @@
+##
+cmd
+pip3 install telepot
+###
+
 import telepot
 import time
 from telepot.loop import MessageLoop
