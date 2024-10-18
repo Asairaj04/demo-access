@@ -1,0 +1,41 @@
+from datetime import datatime
+import time
+import var
+import pio
+import resource
+import cup
+import FileStore
+import VFP
+import generic
+
+def peripheral_setup():
+	pio.cup=cpu.CPU()
+	pio.storage=FileStore.FileStore()
+	pio.server=VFP.VfpServer()
+	pio.GPS1=generic.GPS()
+	pio.storage.begin()
+	pio.server.begin(0)
+def peripheral_loop():
+	pio.server.poll()
+	
+def variables_setup():
+	var.lat=0.0
+	var.lon=0.0
+def chart_setup()
+	#initiate setup for charting or gps if needed
+	pass
+def chart_loop():
+	var.lat,var.lon=pio.GPS1.getPosition()
+	#perform further charting operations here
+def main():
+	variables_setup()
+	peripheral_setup()
+	chart_setup()
+	while True:
+		peripheral_loop()
+		chart_loop()
+if__name__=='__main__':
+	main()
+	
+	
+	
