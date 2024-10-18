@@ -1,3 +1,11 @@
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get python pip
+
+sudo pip3 install tm1637
+#######################################
+
 '''import RPi.GPIO as gp
 import time
 from tm1637 import TM1637
@@ -24,6 +32,8 @@ def display_time():
 		gp.cleanup()
 display_time()
 '''
+
+##########################################
 import RPi.GPIO as gp
 import time
 from tm1637 import TM1637
